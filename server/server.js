@@ -11,9 +11,10 @@ const bodyParserConfig = {
   extended: true,
 };
 
+app.use(cors());
+
 app.use(bodyParser.json(bodyParserConfig));
 app.use(bodyParser.urlencoded(bodyParserConfig));
-app.use(cors());
 app.use("/posts", postRoutes);
 
 // todo:  move the creds to .env
